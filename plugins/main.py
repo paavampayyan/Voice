@@ -32,7 +32,7 @@ def blacks():
 
 # Ping
 
-@Client.on_message(filters.command(["ping"]) & filters.chat(sudo_chat_id) & ~filters.edited)
+@Client.on_message(filters.command(["ping"]) & ~filters.edited)
 async def ping(_, message: Message):
     if message.from_user.id in blacks():
         await message.reply_text("You're Blacklisted, So Stop Spamming.")
@@ -47,7 +47,7 @@ async def ping(_, message: Message):
 
 # Start
 
-@Client.on_message(filters.command(["start"]) & filters.chat(sudo_chat_id) & ~filters.edited)
+@Client.on_message(filters.command(["start"]) & ~filters.edited)
 async def start(_, message: Message):
 
     if message.from_user.id in blacks():
@@ -82,7 +82,7 @@ NOTE: Do Not Assign These Commands To Bot Via BotFather''')
 #Global vars
 s = None
 m = None
-@Client.on_message(filters.command(["jiosaavn"]) & filters.chat(sudo_chat_id) & ~filters.edited)
+@Client.on_message(filters.command(["jiosaavn"]) & ~filters.edited)
 async def jiosaavn(_, message: Message):
     if message.from_user.id in blacks():
         await message.reply_text("You're Blacklisted, So Stop Spamming.")
@@ -122,7 +122,7 @@ async def jiosaavn(_, message: Message):
 
 # Youtube Searching
 
-@Client.on_message(filters.command(["ytsearch"]) & filters.chat(sudo_chat_id) & ~filters.edited)
+@Client.on_message(filters.command(["ytsearch"]) & ~filters.edited)
 async def youtube_search(_, message: Message):
     if message.from_user.id in blacks():
         await message.reply_text("You're Blacklisted, So Stop Spamming.")
@@ -154,7 +154,7 @@ async def youtube_search(_, message: Message):
 
 # Youtube Playing
 
-@Client.on_message(filters.command(["youtube"]) & filters.chat(sudo_chat_id) & ~filters.edited)
+@Client.on_message(filters.command(["youtube"]) & ~filters.edited)
 async def youtube(_, message: Message):
     if message.from_user.id in blacks():
         await message.reply_text("You're Blacklisted, So Stop Spamming.")
@@ -207,7 +207,7 @@ async def youtube(_, message: Message):
 # youtube playlist
 
 
-@Client.on_message(filters.command(["playlist"]) & filters.chat(sudo_chat_id) & ~filters.edited)
+@Client.on_message(filters.command(["playlist"]) & ~filters.edited)
 async def playlist(_, message: Message):
     if message.from_user.id in blacks():
         await message.reply_text("You're Blacklisted, So Stop Spamming.")
@@ -267,7 +267,7 @@ async def playlist(_, message: Message):
 
 # Radio
 
-@Client.on_message(filters.command(["radio"]) & filters.chat(sudo_chat_id) & ~filters.edited)
+@Client.on_message(filters.command(["radio"]) & ~filters.edited)
 async def radio(_, message: Message):
     if message.from_user.id in blacks():
         await message.reply_text("You're Blacklisted, So Stop Spamming.")
@@ -301,7 +301,7 @@ async def radio(_, message: Message):
 
 # End Music
 
-@Client.on_message(filters.command(["end"]) & filters.chat(sudo_chat_id) & ~filters.edited)
+@Client.on_message(filters.command(["end"]) & ~filters.edited)
 async def end(_, message: Message):
     if message.from_user.id in blacks():
         await message.reply_text("You're Blacklisted, So Stop Spamming.")
@@ -335,7 +335,7 @@ async def end(_, message: Message):
 # Ban
 
 
-@Client.on_message(filters.command(["black"]) & filters.chat(sudo_chat_id) & ~filters.edited)
+@Client.on_message(filters.command(["black"]) & ~filters.edited)
 async def blacklist(_, message: Message):
     if message.from_user.id != owner_id:
         await message.reply_text("Only owner can blacklist users.")
@@ -364,7 +364,7 @@ async def blacklist(_, message: Message):
 
 # Unban
 
-@Client.on_message(filters.command(["white"]) & filters.chat(sudo_chat_id) & ~filters.edited)
+@Client.on_message(filters.command(["white"]) & ~filters.edited)
 async def whitelist(_, message: Message):
     if message.from_user.id != owner_id:
         await message.reply_text("Only owner can whitelist users.")
@@ -393,7 +393,7 @@ async def whitelist(_, message: Message):
 # Blacklisted users
 
 
-@Client.on_message(filters.command(["users"]) & filters.chat(sudo_chat_id) & ~filters.edited)
+@Client.on_message(filters.command(["users"]) & ~filters.edited)
 async def users(client, message: Message):
     if message.from_user.id in blacks():
         await message.reply_text("You're Blacklisted, So Stop Spamming.")
